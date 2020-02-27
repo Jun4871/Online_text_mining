@@ -32,12 +32,12 @@ news_urls <- news_urls[grep("https://news.naver.com/main", news_urls)]
 ## 뉴스에 대한 text 가져오기 
 # text_url <- "https://news.naver.com/main/read.nhn?mode=LSD&mid=sec&sid1=105&oid=020&aid=0003237460"
 
-text_url <- news_urls[2]
-
-text_url %>% 
-  read_html() %>% 
-  html_nodes("#articleBodyContents._article_body_contents") %>% 
-  html_text()
+# text_url <- news_urls[2]
+# 
+# text_url %>% 
+#   read_html() %>% 
+#   html_nodes("#articleBodyContents._article_body_contents") %>% 
+#   html_text()
 
 
 
@@ -51,6 +51,7 @@ for(i in 1:5) {
     html_nodes("#articleBodyContents._article_body_contents") %>% 
     html_text()
   
+  # for문으로 가져온 text를 append함수를 써서 이어 붙히기
   news_text <- append(news_text, texts)
   # news_text <- append(news_text, texts)
 }
